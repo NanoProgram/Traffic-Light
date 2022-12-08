@@ -3,16 +3,16 @@ import { useEffect, useState } from "react";
 
 const Traffic = () => {
 const [color, setColor] = useState("red")
-function now() {
-    setColor (prev =>"")
+function now(color) {
+    setColor (prev => color)
     console.log("now")
 }
 
     return (
         <div class="semaforo">
-            <div class= "red" onClick={() => now()}></div>
-            <div class="yellow"></div>
-            <div class= "green"></div>
+            <div class= {color == "red" ? "red on" : "red"} onClick={() => now("red")}></div>
+            <div class= {color == "yellow" ? "yellow on" : "yellow"} onClick={() => now("yellow")}></div>
+            <div class= {color == "green" ? "green on" : "green"} onClick={() => now("green")}></div>
         </div>
     );
 };
